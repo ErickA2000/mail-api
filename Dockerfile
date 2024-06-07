@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm ci
+RUN npm install
 
 COPY . .
 
@@ -15,8 +15,14 @@ RUN npm run build
 
 FROM node:18.17.0-alpine3.18
 
-COPY --from=build /app ./
+WORKDIR /app
+
+COPY --from=build /app/package*.json ./
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/assets ./assets
+
+RUN npm ci
 
 EXPOSE $PORT
 
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "node", "dist/server.js" ]
