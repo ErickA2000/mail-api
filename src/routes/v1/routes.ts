@@ -1,5 +1,6 @@
 import { Router } from "express";
 import healthRoutes from "./health.routes";
+import mailRoutes from "./mail.routes";
 
 class Routes {
   public router: Router = Router();
@@ -10,6 +11,7 @@ class Routes {
 
   private config(): void {
     this.router.use("/health", healthRoutes);
+    this.router.use("/mail", mailRoutes);
   }
 }
 

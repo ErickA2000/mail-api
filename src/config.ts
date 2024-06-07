@@ -8,6 +8,11 @@ export const corsOptions: CorsOptions = {
   origin: getOrigins()
 };
 
+export const mail = {
+  address: process.env.MAIL_ADDRESS ?? "",
+  password: process.env.MAIL_PASSWORD ?? ""
+};
+
 function getOrigins(): string[] {
   const origins = process.env.ORIGINS;
 
