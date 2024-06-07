@@ -1,8 +1,6 @@
-<h1 align="center">Express Typescript Template</h1>
+<h1 align="center">Mail API</h1>
 
-<p align="center">
-    Template for new project based on express
-</p>
+
 
 ## Table of contents
 
@@ -12,6 +10,8 @@
 - [Testing](#testing)
 - [Linting](#linting)
 - [Production](#production)
+
+Note: Check the .env.example file to know about environment variables
 
 ## Developing
 
